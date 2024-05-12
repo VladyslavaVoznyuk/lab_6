@@ -1,11 +1,15 @@
 ﻿using ClassLibrary1;
+using ClassLibrary1.Models;
+using ClassLibrary1.Notifications;
+using ClassLibrary1.Repository;
 using System;
+using System.Runtime.CompilerServices;
 
 class Program
 {
     static void Main(string[] args)
     {
-        ProductService productService = new ProductService();
+        ProductService productService = ProductService.Instance;
         Inventory inventory = new Inventory();
         EmailNotificationService notificationService = new EmailNotificationService();
         ProductRepository productRepository = new ProductRepository();
@@ -34,7 +38,7 @@ class Program
                     Console.Write("Enter product quantity: ");
                     int quantity = Convert.ToInt32(Console.ReadLine());
 
-                    Product product = new Product {Id = idCounter, Name = name, Price = price, Quantity = quantity };
+                    Product product = new Product (idCounter, name, price, quantity );
                     productService.AddProduct(product);
                     notificationService.SendNotification(product);
                     productRepository.Add(product);
@@ -45,6 +49,7 @@ class Program
                     break;
 
                 case "2":
+                    ShowInventory();
                     Console.Write("Enter product id: ");
                     int id = Convert.ToInt32(Console.ReadLine());
 
@@ -57,6 +62,7 @@ class Program
                     break;
 
                 case "3":
+                    ShowInventory();
                     Console.Write("Enter product ID to update: ");
                     int productIdToUpdate = Convert.ToInt32(Console.ReadLine());
                     int changeQTY = 0;
@@ -79,6 +85,7 @@ class Program
                     break;
 
                 case "4":
+                    ShowInventory();
                     Console.Write("Enter product ID to delete: ");
                     int productIdToDelete = Convert.ToInt32(Console.ReadLine());
                     Product productToDelete = productRepository.GetById(productIdToDelete);
@@ -97,8 +104,8 @@ class Program
                     break;
 
                 case "5":
-                    Console.WriteLine("All Products:");
-                    productRepository.DisplayAllProducts();
+                    ShowInventory();
+                    //productRepository.DisplayAllProducts();
                     break;
 
                 case "6":
@@ -122,5 +129,13 @@ class Program
 
             Console.WriteLine();
         }
+
+        void ShowInventory()
+        {
+            Console.WriteLine("=================Products in repository===================");
+            productRepository.DisplayAllProducts();
+            Console.WriteLine("==========================================================");
+        }
+
     }
 }

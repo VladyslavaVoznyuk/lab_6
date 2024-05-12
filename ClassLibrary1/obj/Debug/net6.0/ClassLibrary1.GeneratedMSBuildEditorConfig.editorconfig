@@ -8,4 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ClassLibrary1
-build_property.ProjectDir = C:\Users\Vlada\Design-Patterns\inventory\ClassLibrary1\
+build_property.ProjectDir = C:\Users\PRO\Desktop\2 КУРС 2 СЕМЕСТР\lab06_forks\lab_6\ClassLibrary1\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

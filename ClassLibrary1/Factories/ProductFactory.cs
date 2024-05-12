@@ -5,11 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using ClassLibrary1.Models;
 
-namespace ClassLibrary1
+namespace ClassLibrary1.Factories
 {
-    public interface IObserver
+    public abstract class ProductFactory
     {
-        void Update(Product product);
+        public abstract Product CreateProduct();
     }
-
 }

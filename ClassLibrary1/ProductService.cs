@@ -3,28 +3,41 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ClassLibrary1.Models;
 
 namespace ClassLibrary1
 {
-
-    public class ProductService
+    sealed public class ProductService
     {
+        //singleton паттерн для щоб не можна було дублювати список товарів
+        private static ProductService _instance;
         private List<Product> _products;
 
-        public ProductService()
+        public static ProductService Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new ProductService();
+                }
+                return _instance;
+            }
+        }
+        
+        private ProductService()
         {
             _products = new List<Product>();
         }
 
         public void AddProduct(Product product)
         {
-            if (product == null)
-            {
-                throw new ArgumentNullException(nameof(product), "Product cannot be null.");
-            }
+            ProductCheck(product);
 
             ValidateProduct(product);
+
             _products.Add(product);
+
             Console.WriteLine($"Product '{product.Name}' added successfully.");
         }
 
@@ -44,10 +57,7 @@ namespace ClassLibrary1
 
         public void UpdateProduct(Product product)
         {
-            if (product == null)
-            {
-                throw new ArgumentNullException(nameof(product), "Product cannot be null.");
-            }
+            ProductCheck(product);
 
             Console.WriteLine($"Product '{product.Name}' information updated.");
         }
@@ -76,6 +86,14 @@ namespace ClassLibrary1
             if (product.Quantity < 0)
             {
                 throw new ArgumentException("Product quantity must be non-negative.", nameof(product));
+            }
+        }
+
+        public void ProductCheck(Product product)
+        {
+            if (product == null)
+            {
+                throw new ArgumentNullException(nameof(product), "Product cannot be null.");
             }
         }
     }

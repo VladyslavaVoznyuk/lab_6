@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ClassLibrary1.Models;
 
 namespace ClassLibrary1
 {
     public abstract class NotificationService
     {
+        //можливо додати додаткові класи у вигляді патерну Strategy, щоб покращити логіку коду
         public abstract void SendNotification(Product product);
 
         protected void SendEmailNotification(Product product)
@@ -23,21 +25,4 @@ namespace ClassLibrary1
             Console.WriteLine("SMS notification sent successfully.");
         }
     }
-
-    public class EmailNotificationService : NotificationService
-    {
-        public override void SendNotification(Product product)
-        {
-            SendEmailNotification(product);
-        }
-    }
-
-    public class SMSNotificationService : NotificationService
-    {
-        public override void SendNotification(Product product)
-        {
-            SendSMSNotification(product);
-        }
-    }
-
 }

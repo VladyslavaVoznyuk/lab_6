@@ -1,19 +1,12 @@
-﻿using System;
+﻿using ClassLibrary1.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary1
+namespace ClassLibrary1.Repository
 {
-    public interface IRepository<T>
-    {
-        T GetById(int id);
-        void Add(T entity);
-        void Update(T entity);
-        void Delete(int id);
-    }
-
     public class ProductRepository : IRepository<Product>
     {
         private List<Product> _products = new List<Product>();
@@ -30,7 +23,8 @@ namespace ClassLibrary1
 
         public void Update(Product product)
         {
-            var existingProduct = _products.FirstOrDefault(p => p.Id == product.Id);
+            var existingProduct = GetById(product.Id);
+
             if (existingProduct != null)
             {
                 existingProduct.Name = product.Name;
@@ -45,7 +39,8 @@ namespace ClassLibrary1
 
         public void Delete(int id)
         {
-            var productToRemove = _products.FirstOrDefault(p => p.Id == id);
+            var productToRemove = GetById(id);
+            
             if (productToRemove != null)
             {
                 _products.Remove(productToRemove);
@@ -65,6 +60,4 @@ namespace ClassLibrary1
             }
         }
     }
-
-
 }
