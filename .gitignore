@@ -1,3 +1,6 @@
+**/obj/**
+**/bin/**
+**/.vs/**
 ##### Windows
 # Windows thumbnail cache files
 Thumbs.db
