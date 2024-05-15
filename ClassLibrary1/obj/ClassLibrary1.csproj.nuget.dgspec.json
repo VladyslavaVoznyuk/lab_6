@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vlada\\Design-Patterns\\inventory\\ClassLibrary1\\ClassLibrary1.csproj": {}
+    "D:\\ІЛЛЯ\\Університет\\2 курс\\2 семестр\\КПЗ - Pull Requests\\01 - VladyslavaVoznyuk - lab6\\lab_6\\ClassLibrary1\\ClassLibrary1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Vlada\\Design-Patterns\\inventory\\ClassLibrary1\\ClassLibrary1.csproj": {
+    "D:\\ІЛЛЯ\\Університет\\2 курс\\2 семестр\\КПЗ - Pull Requests\\01 - VladyslavaVoznyuk - lab6\\lab_6\\ClassLibrary1\\ClassLibrary1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vlada\\Design-Patterns\\inventory\\ClassLibrary1\\ClassLibrary1.csproj",
+        "projectUniqueName": "D:\\ІЛЛЯ\\Університет\\2 курс\\2 семестр\\КПЗ - Pull Requests\\01 - VladyslavaVoznyuk - lab6\\lab_6\\ClassLibrary1\\ClassLibrary1.csproj",
         "projectName": "ClassLibrary1",
-        "projectPath": "C:\\Users\\Vlada\\Design-Patterns\\inventory\\ClassLibrary1\\ClassLibrary1.csproj",
-        "packagesPath": "C:\\Users\\Vlada\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vlada\\Design-Patterns\\inventory\\ClassLibrary1\\obj\\",
+        "projectPath": "D:\\ІЛЛЯ\\Університет\\2 курс\\2 семестр\\КПЗ - Pull Requests\\01 - VladyslavaVoznyuk - lab6\\lab_6\\ClassLibrary1\\ClassLibrary1.csproj",
+        "packagesPath": "C:\\Users\\illic\\.nuget\\packages\\",
+        "outputPath": "D:\\ІЛЛЯ\\Університет\\2 курс\\2 семестр\\КПЗ - Pull Requests\\01 - VladyslavaVoznyuk - lab6\\lab_6\\ClassLibrary1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Vlada\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\illic\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -39,6 +39,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -60,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
         }
       }
     }

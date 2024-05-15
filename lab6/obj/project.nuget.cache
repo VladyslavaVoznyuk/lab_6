@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "WuVgczZmUiYNrDP6QDcelN019DowPk9gkTw5vsy5uCr8lrS9VjY4bsbGKGZhtIG3KqvQR/HvUBBA+5n4SNhKpg==",
+  "dgSpecHash": "A9cfKX5E4X43l5a+SACPBmX4DNUc6Ev0lpucPGF5s3g0DKUYb/X69ti/2DmJ7abqGgOCLqh0ldeFVzWVayN+7g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Vlada\\Design-Patterns\\inventory\\lab6\\lab6.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\ІЛЛЯ\\Університет\\2 курс\\2 семестр\\КПЗ - Pull Requests\\01 - VladyslavaVoznyuk - lab6\\lab_6\\lab6\\lab6.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\illic\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "C:\\Users\\illic\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\illic\\.nuget\\packages\\spectre.console\\0.49.1\\spectre.console.0.49.1.nupkg.sha512"
+  ],
   "logs": []
 }
