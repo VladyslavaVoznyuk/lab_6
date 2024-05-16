@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
@@ -16,27 +12,18 @@ namespace ClassLibrary1
 
             Console.WriteLine("Email notification sent successfully.");
         }
-
-        protected void SendSMSNotification(Product product)
-        {
-            Console.WriteLine($"Sending SMS notification for product '{product.Name}'...");
-            Console.WriteLine("SMS notification sent successfully.");
-        }
     }
 
-    public class EmailNotificationService : NotificationService
+    public class EmailNotificationService : NotificationService, IObserver
     {
         public override void SendNotification(Product product)
         {
             SendEmailNotification(product);
         }
-    }
 
-    public class SMSNotificationService : NotificationService
-    {
-        public override void SendNotification(Product product)
+        public void Update(Product product)
         {
-            SendSMSNotification(product);
+            SendEmailNotification(product);
         }
     }
 

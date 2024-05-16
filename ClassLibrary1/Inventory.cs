@@ -46,14 +46,14 @@ namespace ClassLibrary1
             }
         }
 
-        public void UpdateInventory(Product product, int quantityChange)
+        public void UpdateInventory(Product product, int newQuantity)
         {
             if (product == null)
             {
                 throw new ArgumentNullException(nameof(product), "Product cannot be null.");
             }
 
-            product.Quantity += quantityChange;
+            product.Quantity += newQuantity;
             Console.WriteLine($"Inventory updated for product '{product.Name}'. New quantity: {product.Quantity}");
         }
     }
