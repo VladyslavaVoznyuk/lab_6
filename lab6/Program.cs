@@ -108,15 +108,21 @@ class Program
                     break;
 
                 case "5":
-                    Console.WriteLine("All Products:");
                     productRepository.DisplayAllProducts();
                     break;
 
                 case "6":
-                    Console.WriteLine("Inventory:");
-                    foreach (var item in inventory.Products)
+                    if (inventory.Products.Count == 0)
                     {
-                        Console.WriteLine($"Name: {item.Name}, Price: {item.Price}, Quantity: {item.Quantity}");
+                        Console.WriteLine("No products found in the inventory.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Inventory:");
+                        foreach (var item in inventory.Products)
+                        {
+                            Console.WriteLine($"Name: {item.Name}, Price: {item.Price}, Quantity: {item.Quantity}");
+                        }
                     }
                     break;
 
