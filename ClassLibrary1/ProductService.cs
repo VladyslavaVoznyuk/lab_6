@@ -42,25 +42,6 @@ namespace ClassLibrary1
             }
         }
 
-        public void UpdateProduct(Product product)
-        {
-            if (product == null)
-            {
-                throw new ArgumentNullException(nameof(product), "Product cannot be null.");
-            }
-
-            Console.WriteLine($"Product '{product.Name}' information updated.");
-        }
-
-        public void DisplayAllProducts()
-        {
-            Console.WriteLine("All Products:");
-            foreach (var product in _products)
-            {
-                Console.WriteLine($"ID: {product.Id}, Name: {product.Name}, Price: {product.Price}, Quantity: {product.Quantity}");
-            }
-        }
-
         private void ValidateProduct(Product product)
         {
             if (string.IsNullOrWhiteSpace(product.Name))

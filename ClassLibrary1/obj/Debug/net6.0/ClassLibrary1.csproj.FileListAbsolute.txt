@@ -9,3 +9,15 @@ C:\Users\Vlada\Design-Patterns\inventory\ClassLibrary1\obj\Debug\net6.0\ClassLib
 C:\Users\Vlada\Design-Patterns\inventory\ClassLibrary1\obj\Debug\net6.0\refint\ClassLibrary1.dll
 C:\Users\Vlada\Design-Patterns\inventory\ClassLibrary1\obj\Debug\net6.0\ClassLibrary1.pdb
 C:\Users\Vlada\Design-Patterns\inventory\ClassLibrary1\obj\Debug\net6.0\ref\ClassLibrary1.dll
+E:\Конструюваня програмного забезпечення\lab_6\ClassLibrary1\bin\Debug\net6.0\ClassLibrary1.deps.json
+E:\Конструюваня програмного забезпечення\lab_6\ClassLibrary1\bin\Debug\net6.0\ClassLibrary1.dll
+E:\Конструюваня програмного забезпечення\lab_6\ClassLibrary1\bin\Debug\net6.0\ClassLibrary1.pdb
+E:\Конструюваня програмного забезпечення\lab_6\ClassLibrary1\obj\Debug\net6.0\ClassLibrary1.csproj.AssemblyReference.cache
+E:\Конструюваня програмного забезпечення\lab_6\ClassLibrary1\obj\Debug\net6.0\ClassLibrary1.GeneratedMSBuildEditorConfig.editorconfig
+E:\Конструюваня програмного забезпечення\lab_6\ClassLibrary1\obj\Debug\net6.0\ClassLibrary1.AssemblyInfoInputs.cache
+E:\Конструюваня програмного забезпечення\lab_6\ClassLibrary1\obj\Debug\net6.0\ClassLibrary1.AssemblyInfo.cs
+E:\Конструюваня програмного забезпечення\lab_6\ClassLibrary1\obj\Debug\net6.0\ClassLibrary1.csproj.CoreCompileInputs.cache
+E:\Конструюваня програмного забезпечення\lab_6\ClassLibrary1\obj\Debug\net6.0\ClassLibrary1.dll
+E:\Конструюваня програмного забезпечення\lab_6\ClassLibrary1\obj\Debug\net6.0\refint\ClassLibrary1.dll
+E:\Конструюваня програмного забезпечення\lab_6\ClassLibrary1\obj\Debug\net6.0\ClassLibrary1.pdb
+E:\Конструюваня програмного забезпечення\lab_6\ClassLibrary1\obj\Debug\net6.0\ref\ClassLibrary1.dll

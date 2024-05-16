@@ -58,11 +58,18 @@ namespace ClassLibrary1
 
         public void DisplayAllProducts()
         {
-            Console.WriteLine("All Products:");
-            foreach (var product in _products)
+            if (_products.Count == 0)
             {
-                Console.WriteLine($"ID: {product.Id}, Name: {product.Name}, Price: {product.Price}, Quantity: {product.Quantity}");
+                Console.WriteLine("No products found.");
+            } else
+            {
+                Console.WriteLine("All Products:");
+                foreach (var product in _products)
+                {
+                    Console.WriteLine($"ID: {product.Id}, Name: {product.Name}, Price: {product.Price}, Quantity: {product.Quantity}");
+                }
             }
+
         }
     }
 
