@@ -30,7 +30,7 @@ namespace ClassLibrary1
 
         public void Update(Product product)
         {
-            var existingProduct = _products.FirstOrDefault(p => p.Id == product.Id);
+            var existingProduct = GetById(product.Id);
             if (existingProduct != null)
             {
                 existingProduct.Name = product.Name;
@@ -39,39 +39,41 @@ namespace ClassLibrary1
             }
             else
             {
-                throw new InvalidOperationException("Product not found.");
+                ProductNotFound();
             }
         }
 
         public void Delete(int id)
         {
-            var productToRemove = _products.FirstOrDefault(p => p.Id == id);
-            if (productToRemove != null)
+            _products.RemoveAll(p => p.Id == id);
+            if (!_products.Any())
             {
-                _products.Remove(productToRemove);
-            }
-            else
-            {
-                throw new InvalidOperationException("Product not found.");
+                ProductNotFound();
             }
         }
 
-        public void DisplayAllProducts()
+        private void ProductNotFound()
         {
-            if (_products.Count == 0)
+            throw new InvalidOperationException("Product not found.");
+        }
+    }
+
+    public class ProductConsolePrinter
+    {
+        public void DisplayAllProducts(List<Product> products)
+        {
+            if (products.Count == 0)
             {
                 Console.WriteLine("No products found.");
-            } else
+            }
+            else
             {
                 Console.WriteLine("All Products:");
-                foreach (var product in _products)
+                foreach (var product in products)
                 {
                     Console.WriteLine($"ID: {product.Id}, Name: {product.Name}, Price: {product.Price}, Quantity: {product.Quantity}");
                 }
             }
-
         }
     }
-
-
 }

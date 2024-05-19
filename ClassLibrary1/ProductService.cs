@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
-
     public class ProductService
     {
-        private List<Product> _products;
+        private readonly List<Product> _products;
 
         public ProductService()
         {
@@ -18,23 +17,19 @@ namespace ClassLibrary1
 
         public void AddProduct(Product product)
         {
-            if (product == null)
-            {
-                throw new ArgumentNullException(nameof(product), "Product cannot be null.");
-            }
-
             ValidateProduct(product);
             _products.Add(product);
-            Console.WriteLine($"Product '{product.Name}' added successfully.");
+            PrintProductAddedMessage(product.Name);
         }
 
         public void RemoveProduct(int productId)
         {
-            var productToRemove = _products.FirstOrDefault(p => p.Id == productId);
-            if (productToRemove != null)
+            int initialCount = _products.Count;
+            _products.RemoveAll(p => p.Id == productId);
+            if (_products.Count < initialCount)
             {
-                _products.Remove(productToRemove);
-                Console.WriteLine($"Product '{productToRemove.Name}' removed successfully.");
+                Product removedProduct = _products.FirstOrDefault(p => p.Id == productId);
+                PrintProductRemovedMessage(removedProduct?.Name ?? $"Product with ID '{productId}'");
             }
             else
             {
@@ -44,6 +39,11 @@ namespace ClassLibrary1
 
         private void ValidateProduct(Product product)
         {
+            if (product == null)
+            {
+                throw new ArgumentNullException(nameof(product), "Product cannot be null.");
+            }
+
             if (string.IsNullOrWhiteSpace(product.Name))
             {
                 throw new ArgumentException("Product name cannot be empty.", nameof(product));
@@ -58,6 +58,16 @@ namespace ClassLibrary1
             {
                 throw new ArgumentException("Product quantity must be non-negative.", nameof(product));
             }
+        }
+
+        private void PrintProductAddedMessage(string productName)
+        {
+            Console.WriteLine($"Product '{productName}' added successfully.");
+        }
+
+        private void PrintProductRemovedMessage(string productName)
+        {
+            Console.WriteLine($"Product '{productName}' removed successfully.");
         }
     }
 }
