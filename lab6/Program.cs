@@ -5,11 +5,33 @@ class Program
 {
     static void Main(string[] args)
     {
-        ProductService productService = new ProductService();
-        Inventory inventory = new Inventory();
-        EmailNotificationService notificationService = new EmailNotificationService();
-        ProductRepository productRepository = new ProductRepository();
+        var productService = new ProductService();
+        var inventory = new Inventory();
+        var notificationService = new EmailNotificationService();
+        var productRepository = new ProductRepository();
+        var menuService = new MenuService(productService, inventory, notificationService, productRepository);
 
+        menuService.RunMenu();
+    }
+}
+
+public class MenuService
+{
+    private readonly ProductService _productService;
+    private readonly Inventory _inventory;
+    private readonly EmailNotificationService _notificationService;
+    private readonly ProductRepository _productRepository;
+
+    public MenuService(ProductService productService, Inventory inventory, EmailNotificationService notificationService, ProductRepository productRepository)
+    {
+        _productService = productService;
+        _inventory = inventory;
+        _notificationService = notificationService;
+        _productRepository = productRepository;
+    }
+
+    public void RunMenu()
+    {
         int idCounter = 0;
 
         while (true)
@@ -27,103 +49,31 @@ class Program
             switch (choice)
             {
                 case "1":
-                    Product product = null;
-                    do
-                    {
-                        product = CreateProduct(idCounter);
-                    } while (product == null);
-
-                    productService.AddProduct(product);
-                    notificationService.SendNotification(product);
-                    productRepository.Add(product);
-
-                    Console.WriteLine("Product added successfully!");
-                    idCounter++;
+                    _productService.AddProduct(CreateProduct(idCounter++));
                     break;
 
                 case "2":
-                    int productIdToAddToInventory;
-                    do
-                    {
-                        Console.Write("Enter product ID to add to inventory: ");
-                    } while (!int.TryParse(Console.ReadLine(), out productIdToAddToInventory));
-
-                    Product productToAddToInventory = productRepository.GetById(productIdToAddToInventory);
-                    if (productToAddToInventory != null)
-                    {
-                        inventory.AddProductToInventory(productToAddToInventory);
-                        Console.WriteLine("Product added to inventory successfully!");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Product not found!");
-                    }
+                    _inventory.AddProductToInventory(_productRepository.GetById(GetProductIdFromUser()));
                     break;
 
                 case "3":
-                    int productIdToUpdateInventory;
-                    do
-                    {
-                        Console.Write("Enter product ID to update inventory: ");
-                    } while (!int.TryParse(Console.ReadLine(), out productIdToUpdateInventory));
-
-                    int newQuantity;
-                    do
-                    {
-                        Console.Write("Enter new quantity: ");
-                    } while (!int.TryParse(Console.ReadLine(), out newQuantity));
-
-                    Product productToUpdateInventory = productRepository.GetById(productIdToUpdateInventory);
-                    if (productToUpdateInventory != null)
-                    {
-                        inventory.UpdateInventory(productToUpdateInventory, newQuantity);
-                        Console.WriteLine("Inventory updated successfully!");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Product not found!");
-                    }
+                    int productIdToUpdateInventory = GetProductIdFromUser();
+                    int newQuantity = GetNewQuantityFromUser();
+                    _inventory.UpdateInventory(_productRepository.GetById(productIdToUpdateInventory), newQuantity);
                     break;
 
                 case "4":
-                    int productIdToDelete;
-                    do
-                    {
-                        Console.Write("Enter product ID to delete: ");
-                    } while (!int.TryParse(Console.ReadLine(), out productIdToDelete));
-
-                    Product productToDelete = productRepository.GetById(productIdToDelete);
-                    if (productToDelete != null)
-                    {
-                        productService.RemoveProduct(productIdToDelete);
-                        inventory.RemoveProductFromInventory(productToDelete);
-                        productRepository.Delete(productIdToDelete);
-
-                        Console.WriteLine("Product deleted successfully!");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Product not found!");
-                    }
+                    int productIdToDelete = GetProductIdFromUser();
+                    _productService.RemoveProduct(productIdToDelete);
+                    _inventory.RemoveProductFromInventory(_productRepository.GetById(productIdToDelete));
                     break;
 
                 case "5":
-                    productRepository.DisplayAllProducts();
+                    _productRepository.DisplayAllProducts();
                     break;
 
                 case "6":
-                    if (inventory.Products.Count == 0)
-                    {
-                        Console.WriteLine("No products found in the inventory.");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Inventory:");
-                        foreach (var item in inventory.Products)
-                        {
-                            Console.WriteLine($"Name: {item.Name}, Price: {item.Price}, Quantity: {item.Quantity}");
-                        }
-                    }
+                    _inventory.DisplayInventory();
                     break;
 
                 case "7":
@@ -140,7 +90,29 @@ class Program
         }
     }
 
-    static Product CreateProduct(int idCounter)
+    private int GetProductIdFromUser()
+    {
+        int productId;
+        do
+        {
+            Console.Write("Enter product ID: ");
+        } while (!int.TryParse(Console.ReadLine(), out productId));
+
+        return productId;
+    }
+
+    private int GetNewQuantityFromUser()
+    {
+        int newQuantity;
+        do
+        {
+            Console.Write("Enter new quantity: ");
+        } while (!int.TryParse(Console.ReadLine(), out newQuantity));
+
+        return newQuantity;
+    }
+
+    private Product CreateProduct(int idCounter)
     {
         string name;
         do
