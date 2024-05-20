@@ -21,22 +21,118 @@ class Program
             switch (choice)
             {
                 case "1":
+<<<<<<< HEAD
                     AddNewProduct(productService, notificationService, productRepository, ref idCounter);
+=======
+                    Product product = null;
+                    do
+                    {
+                        product = CreateProduct(idCounter);
+                    } while (product == null);
+
+                    productService.AddProduct(product);
+                    notificationService.SendNotification(product);
+                    productRepository.Add(product);
+
+                    Console.WriteLine("Product added successfully!");
+                    idCounter++;
+>>>>>>> 5694886d103966f1423c07f50c3edd9d44639183
                     break;
                 case "2":
+<<<<<<< HEAD
                     AddProductToInventory(inventory, productRepository);
+=======
+                    int productIdToAddToInventory;
+                    do
+                    {
+                        Console.Write("Enter product ID to add to inventory: ");
+                    } while (!int.TryParse(Console.ReadLine(), out productIdToAddToInventory));
+
+                    Product productToAddToInventory = productRepository.GetById(productIdToAddToInventory);
+                    if (productToAddToInventory != null)
+                    {
+                        inventory.AddProductToInventory(productToAddToInventory);
+                        Console.WriteLine("Product added to inventory successfully!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Product not found!");
+                    }
+>>>>>>> 5694886d103966f1423c07f50c3edd9d44639183
                     break;
                 case "3":
+<<<<<<< HEAD
                     UpdateInventory(inventory, productRepository);
+=======
+                    int productIdToUpdateInventory;
+                    do
+                    {
+                        Console.Write("Enter product ID to update inventory: ");
+                    } while (!int.TryParse(Console.ReadLine(), out productIdToUpdateInventory));
+
+                    int newQuantity;
+                    do
+                    {
+                        Console.Write("Enter new quantity: ");
+                    } while (!int.TryParse(Console.ReadLine(), out newQuantity));
+
+                    Product productToUpdateInventory = productRepository.GetById(productIdToUpdateInventory);
+                    if (productToUpdateInventory != null)
+                    {
+                        inventory.UpdateInventory(productToUpdateInventory, newQuantity);
+                        Console.WriteLine("Inventory updated successfully!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Product not found!");
+                    }
+>>>>>>> 5694886d103966f1423c07f50c3edd9d44639183
                     break;
                 case "4":
+<<<<<<< HEAD
                     DeleteProduct(productService, inventory, productRepository);
+=======
+                    int productIdToDelete;
+                    do
+                    {
+                        Console.Write("Enter product ID to delete: ");
+                    } while (!int.TryParse(Console.ReadLine(), out productIdToDelete));
+
+                    Product productToDelete = productRepository.GetById(productIdToDelete);
+                    if (productToDelete != null)
+                    {
+                        productService.RemoveProduct(productIdToDelete);
+                        inventory.RemoveProductFromInventory(productToDelete);
+                        productRepository.Delete(productIdToDelete);
+
+                        Console.WriteLine("Product deleted successfully!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Product not found!");
+                    }
+>>>>>>> 5694886d103966f1423c07f50c3edd9d44639183
                     break;
                 case "5":
                     productRepository.DisplayAllProducts();
                     break;
                 case "6":
+<<<<<<< HEAD
                     DisplayInventory(inventory);
+=======
+                    if (inventory.Products.Count == 0)
+                    {
+                        Console.WriteLine("No products found in the inventory.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Inventory:");
+                        foreach (var item in inventory.Products)
+                        {
+                            Console.WriteLine($"Name: {item.Name}, Price: {item.Price}, Quantity: {item.Quantity}");
+                        }
+                    }
+>>>>>>> 5694886d103966f1423c07f50c3edd9d44639183
                     break;
                 case "7":
                     Console.WriteLine("Exiting...");
@@ -51,6 +147,7 @@ class Program
         }
     }
 
+<<<<<<< HEAD
     static void DisplayMenu()
     {
         Console.WriteLine("1. Create Product");
@@ -177,3 +274,29 @@ class Program
         }
     }
 }
+=======
+    static Product CreateProduct(int idCounter)
+    {
+        string name;
+        do
+        {
+            Console.Write("Enter product name: ");
+            name = Console.ReadLine();
+        } while (string.IsNullOrWhiteSpace(name));
+
+        double price;
+        do
+        {
+            Console.Write("Enter product price: ");
+        } while (!double.TryParse(Console.ReadLine(), out price) || price <= 0);
+
+        int quantity;
+        do
+        {
+            Console.Write("Enter product quantity: ");
+        } while (!int.TryParse(Console.ReadLine(), out quantity) || quantity <= 0);
+
+        return new Product { Id = idCounter, Name = name, Price = price, Quantity = quantity };
+    }
+}
+>>>>>>> 5694886d103966f1423c07f50c3edd9d44639183
