@@ -21,3 +21,15 @@ E:\Конструюваня програмного забезпечення\lab_
 E:\Конструюваня програмного забезпечення\lab_6\ClassLibrary1\obj\Debug\net6.0\refint\ClassLibrary1.dll
 E:\Конструюваня програмного забезпечення\lab_6\ClassLibrary1\obj\Debug\net6.0\ClassLibrary1.pdb
 E:\Конструюваня програмного забезпечення\lab_6\ClassLibrary1\obj\Debug\net6.0\ref\ClassLibrary1.dll
+D:\2 курс\Конструювання ПЗ\lab_6\ClassLibrary1\bin\Debug\net6.0\ClassLibrary1.deps.json
+D:\2 курс\Конструювання ПЗ\lab_6\ClassLibrary1\bin\Debug\net6.0\ClassLibrary1.dll
+D:\2 курс\Конструювання ПЗ\lab_6\ClassLibrary1\bin\Debug\net6.0\ClassLibrary1.pdb
+D:\2 курс\Конструювання ПЗ\lab_6\ClassLibrary1\obj\Debug\net6.0\ClassLibrary1.GeneratedMSBuildEditorConfig.editorconfig
+D:\2 курс\Конструювання ПЗ\lab_6\ClassLibrary1\obj\Debug\net6.0\ClassLibrary1.AssemblyInfoInputs.cache
+D:\2 курс\Конструювання ПЗ\lab_6\ClassLibrary1\obj\Debug\net6.0\ClassLibrary1.AssemblyInfo.cs
+D:\2 курс\Конструювання ПЗ\lab_6\ClassLibrary1\obj\Debug\net6.0\ClassLibrary1.csproj.CoreCompileInputs.cache
+D:\2 курс\Конструювання ПЗ\lab_6\ClassLibrary1\obj\Debug\net6.0\ClassLibrary1.sourcelink.json
+D:\2 курс\Конструювання ПЗ\lab_6\ClassLibrary1\obj\Debug\net6.0\ClassLibrary1.dll
+D:\2 курс\Конструювання ПЗ\lab_6\ClassLibrary1\obj\Debug\net6.0\refint\ClassLibrary1.dll
+D:\2 курс\Конструювання ПЗ\lab_6\ClassLibrary1\obj\Debug\net6.0\ClassLibrary1.pdb
+D:\2 курс\Конструювання ПЗ\lab_6\ClassLibrary1\obj\Debug\net6.0\ref\ClassLibrary1.dll

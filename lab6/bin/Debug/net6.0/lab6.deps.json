@@ -8,15 +8,15 @@
     ".NETCoreApp,Version=v6.0": {
       "lab6/1.0.0": {
         "dependencies": {
-          "ClassLibrary1": "1.0.0"
+          "InventoryLibrary": "1.0.0"
         },
         "runtime": {
           "lab6.dll": {}
         }
       },
-      "ClassLibrary1/1.0.0": {
+      "InventoryLibrary/1.0.0": {
         "runtime": {
-          "ClassLibrary1.dll": {}
+          "InventoryLibrary.dll": {}
         }
       }
     }
@@ -27,7 +27,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "ClassLibrary1/1.0.0": {
+    "InventoryLibrary/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

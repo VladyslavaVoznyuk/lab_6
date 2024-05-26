@@ -3,18 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ClassLibrary1.Products;
 
-namespace ClassLibrary1
+namespace ClassLibrary1.MenuServices
 {
     public class Inventory
     {
-
         private List<Product> _products = new List<Product>();
 
-        public List<Product> Products
-        {
-            get { return _products; }
-        }
+        public List<Product> Products => _products;
 
         public void AddProductToInventory(Product product)
         {
@@ -24,7 +21,6 @@ namespace ClassLibrary1
             }
 
             _products.Add(product);
-
             Console.WriteLine($"Product '{product.Name}' added to inventory.");
         }
 

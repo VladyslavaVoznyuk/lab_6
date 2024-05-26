@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary1
+namespace ClassLibrary1.Products
 {
     public class ElectronicProduct : Product
     {
@@ -12,7 +12,6 @@ namespace ClassLibrary1
         public string Model { get; set; }
         public string Type { get; set; }
 
-        
         public ElectronicProduct(string name, double price, int quantity, string brand, string model, string type)
         {
             Name = name;
@@ -23,23 +22,4 @@ namespace ClassLibrary1
             Type = type;
         }
     }
-
-    public class ClothingProduct : Product
-    {
-        public string Size { get; set; }
-        public string Color { get; set; }
-        public string Material { get; set; }
-
-     
-        public ClothingProduct(string name, double price, int quantity, string size, string color, string material)
-        {
-            Name = name;
-            Price = price;
-            Quantity = quantity;
-            Size = size;
-            Color = color;
-            Material = material;
-        }
-    }
-
 }
