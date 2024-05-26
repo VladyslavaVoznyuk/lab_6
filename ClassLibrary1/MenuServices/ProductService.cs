@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ClassLibrary1.Products;
 
-namespace ClassLibrary1
+namespace ClassLibrary1.MenuServices
 {
-
     public class ProductService
     {
         private List<Product> _products;
@@ -56,7 +56,7 @@ namespace ClassLibrary1
 
             if (product.Quantity < 0)
             {
-                throw new ArgumentException("Product quantity must be non-negative.", nameof(product));
+                throw new ArgumentException("Product quantity cannot be negative.", nameof(product));
             }
         }
     }

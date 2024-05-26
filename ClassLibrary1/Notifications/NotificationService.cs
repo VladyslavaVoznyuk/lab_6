@@ -1,6 +1,7 @@
 ﻿using System;
+using ClassLibrary1.Products;
 
-namespace ClassLibrary1
+namespace ClassLibrary1.Notifications
 {
     public abstract class NotificationService
     {
@@ -13,18 +14,4 @@ namespace ClassLibrary1
             Console.WriteLine("Email notification sent successfully.");
         }
     }
-
-    public class EmailNotificationService : NotificationService, IObserver
-    {
-        public override void SendNotification(Product product)
-        {
-            SendEmailNotification(product);
-        }
-
-        public void Update(Product product)
-        {
-            SendEmailNotification(product);
-        }
-    }
-
 }
