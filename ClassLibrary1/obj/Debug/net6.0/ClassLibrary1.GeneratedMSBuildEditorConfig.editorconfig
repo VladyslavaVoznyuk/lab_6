@@ -8,4 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ClassLibrary1
-build_property.ProjectDir = E:\Конструюваня програмного забезпечення\lab_6\ClassLibrary1\
+build_property.ProjectDir = D:\2 курс\2 семестр\kpz\refactor_vl\lab_6\ClassLibrary1\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
