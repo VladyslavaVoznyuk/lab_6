@@ -34,3 +34,6 @@ E:\Конструюваня програмного забезпечення\lab_
 E:\Конструюваня програмного забезпечення\lab_6\lab6\obj\Debug\net6.0\lab6.pdb
 E:\Конструюваня програмного забезпечення\lab_6\lab6\obj\Debug\net6.0\lab6.genruntimeconfig.cache
 E:\Конструюваня програмного забезпечення\lab_6\lab6\obj\Debug\net6.0\ref\lab6.dll
+D:\2 курс\2 семестр\kpz\refactor_vl\lab_6\lab6\obj\Debug\net6.0\lab6.dll
+D:\2 курс\2 семестр\kpz\refactor_vl\lab_6\lab6\obj\Debug\net6.0\refint\lab6.dll
+D:\2 курс\2 семестр\kpz\refactor_vl\lab_6\lab6\obj\Debug\net6.0\lab6.pdb
